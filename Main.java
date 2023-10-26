@@ -43,7 +43,7 @@ public class Main {
             else if (equation.charAt(j) == 'x')
             {
 
-                // For +x
+                // For +x, the i == j is for equations that start with x
                 if ((i == j) || equation.charAt(j - 1) == '+')
                 {
                     // Make the total x value 1 more
@@ -77,7 +77,7 @@ public class Main {
 				    numericalValue += sign * Integer.parseInt(equation.substring(i, j));
                 }
 
-                // Flip sign
+                // Flip sign 
                 sign = -1;
 
                 // Add one to I, so one spot further than the i
@@ -95,7 +95,23 @@ public class Main {
         
         //Simple.sprint(totalX + ", " + numericalValue + ", " + i);
 
-        // Print out the sulution
-        Simple.sprintln("X = " + totalX / (numericalValue * -1));
+        // Print out the solution
+        // Test for a flat number so it prints nicer
+        if ((numericalValue * -1) / totalX == (int) (numericalValue * -1 / totalX))
+        {
+            // Find what x equals by doing the full number (swap the sign) devided by X value
+            // Example 3x = 6 = 6 / 3 = 2, so x = 2
+            // There is a sign flip because when the equal sign comes around it flips it to its oposite, so reverse it back to normal here
+            Simple.sprintln("X = " + (int)(numericalValue * -1 / totalX));
+        }
+
+        // If it has a decimal point print this
+        else
+        {
+            // Find what x equals by doing the full number (swap the sign) devided by X value
+            // Example 3x = 6 = 6 / 3 = 2, so x = 2
+            // There is a sign flip because when the equal sign comes around it flips it to its oposite, so reverse it back to normal here
+            Simple.sprintln("X = " + (numericalValue * -1 / totalX));
+        }
     }
 }
