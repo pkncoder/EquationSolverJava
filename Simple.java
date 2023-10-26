@@ -1,7 +1,7 @@
 // Scanner for sinputs
 import java.util.Scanner;
 
-public class GeneralFuncs {
+public class Simple {
     // Scanner object
     static Scanner input = new Scanner(System.in);
 
@@ -23,7 +23,7 @@ public class GeneralFuncs {
     public static String strInput(String x)
     {
         // Ask for the input
-        GeneralFuncs.sprint(x);
+        Simple.sprint(x);
         
         // Return the data from the input
         return input.nextLine();
