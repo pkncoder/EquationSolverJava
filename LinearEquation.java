@@ -11,6 +11,8 @@ public class LinearEquation {
     }
 
 
+    // Solve equations like 3x+3=x-6
+    // Returns x
     public double solveLinearEquation()
     {
         // Get the length for how many times we need to loop
